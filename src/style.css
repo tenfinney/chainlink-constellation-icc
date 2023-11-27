@@ -1,0 +1,6 @@
+/* customStyles.css */
+.video-container {
+    width: 100%;
+    max-width: 800px; /* Adjust as needed */
+    height: auto; /* Keeps aspect ratio */
+}
