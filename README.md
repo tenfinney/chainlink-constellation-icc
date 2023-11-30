@@ -38,7 +38,7 @@ $ vercel domains add [domain] [project]
 
 ---
 
-
+![CrossChain Connector](CHAINLINK_CONSTELLATION_HACKATHON_ASSETS/icc-logo-blu-chainlink3-ltblue-1000w.png)
 
 
 # Project Presentation Website with Links to Core Resources and Assets:
