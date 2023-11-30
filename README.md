@@ -1,28 +1,61 @@
-## If you are running the application locally
+## ICC Developer Instructions
 
-First, run the development server:
-
+### Use Node Version Manager
 ```bash
-npm run dev
+nvm use lts/gallium
+```
+
+### Install dependencies
+```bash
+$ npm install
 # or
-yarn dev
+$ yarn
+```
+
+## Running the ICC Application
+### On the development server:
+```bash
+$ npm run dev
+# or
+$ yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 
+
+## To deploy to the internet
+```bash
+$ vercel --prod
+```
+
+## Assign a domain name
+
+```bash
+$ vercel domains add [domain] [project]
+```
+
+
 ---
 
 
-Here are the IPFS hashes for the file in the assets in the `CHAINLINK_CONSTELLATION_HACKATHON_ASSETS` in the root folder.
 
 
 # Project Presentation Website with Links to Core Resources and Assets:
-
+<br/>
 [https://chainlink.freeweb3.com](https://chainlink.freeweb3.com)
+<br/>
+
+---
+
+# Project and Presentation Assets
 
 
-## Project and Presentation Assests
+Here are the IPFS hashes for the file in the assets in the `CHAINLINK_CONSTELLATION_HACKATHON_ASSETS` in the root folder.
+<br/>
+<br/>
+<br/>
+
 
 ### /CHAINLINK_CONSTELLATION_HACKATHON_ASSETS/
 https://freeweb3.infura-ipfs.io/ipfs/QmeTc7MxyJkYNWWorKWepPxxvmGknfSWGGWTSi8Le5Rbtt
