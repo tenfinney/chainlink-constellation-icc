@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Contract Report</title>
+</head>
+<body>
+    <h1>Smart Contract Report</h1>
+
+    <div id="report-container"></div>
+
+    <script>
+        async function fetchSmartContractData() {
+            // Initialize web3.js and the contract instance
+            const Web3 = require('web3');
+            const { abi, networks } = require('./YourSmartContract.json'); // Replace with your actual ABI and contract address
+
+            const web3 = new Web3('http://localhost:8545'); // Replace with Ethereum node URL
+            const contractAddress = networks[1].address; // Assuming Ethereum mainnet; replace with the correct network ID
+            const contract = new web3.eth.Contract(abi, contractAddress);
+
+            // Define the public functions you want to call
+            const publicFunctions = [
+                'getTransactionDetails',
+                // Add public functions here
+            ];
+
+            // Fetch data from each public function
+            const reportData = {};
+            for (const func of publicFunctions) {
+                try {
+                    reportData[func] = await contract.methods[func]().call();
+                } catch (error) {
+                    console.error(`Error calling ${func}:`, error);
+                    reportData[func] = 'Error fetching data';
+                }
+            }
+
+            // Display the report on the page
+            const reportContainer = document.getElementById('report-container');
+            for (const [func, data] of Object.entries(reportData)) {
+                reportContainer.innerHTML += `<p><strong>${func}:</strong> ${JSON.stringify(data)}</p>`;
+            }
+        }
+
+        // Call the function when the page loads
+        window.onload = fetchSmartContractData;
+    </script>
+</body>
+</html>

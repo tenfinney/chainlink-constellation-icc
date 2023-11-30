@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaMask Interaction</title>
+</head>
+<body>
+    <h1>MetaMask Interaction</h1>
+    <button onclick="queueCCIPMessageAndTransfer()">Queue CCIP Message and Transfer Tokens</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.3.6/dist/web3.min.js"></script>
+    <script>
+        // Check if MetaMask is installed
+        if (typeof window.ethereum === 'undefined') {
+            alert('MetaMask is not installed. Please install MetaMask to interact with this page.');
+        }
+
+        async function queueCCIPMessageAndTransfer() {
+            try {
+                // Request account access if not already granted
+                await window.ethereum.request({ method: 'eth_requestAccounts' });
+
+                // Initialize Web3
+                const web3 = new Web3(window.ethereum);
+
+                // Replace with ICC smart contract ABI and address
+                const { abi, networks } = require('./YourSmartContract.json');
+                const contractAddress = networks[1].address; // Assuming Ethereum mainnet; replace with the correct network ID
+                const contract = new web3.eth.Contract(abi, contractAddress);
+
+                // Get the user's address
+                const accounts = await web3.eth.getAccounts();
+                const userAddress = accounts[0];
+
+                // Replace with the actual parameters for CCIP message and token transfer
+                const ccipMessage = 'Your CCIP Message';
+                const tokenAmount = 'Your Token Amount';
+
+                // Call the smart contract method to queue CCIP message and transfer tokens
+                const result = await contract.methods.queueCCIPMessageAndTransfer(ccipMessage, tokenAmount).send({
+                    from: userAddress,
+                });
+
+                alert('Transaction successful! Transaction hash: ' + result.transactionHash);
+            } catch (error) {
+                console.error('Error:', error.message);
+                alert('Transaction failed. Check the console for details.');
+            }
+        }
+    </script>
+</body>
+</html>

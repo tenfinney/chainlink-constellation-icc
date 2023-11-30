@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Entry Page</title>
+</head>
+<body>
+    <h1>Data Entry Page</h1>
+    
+    <label for="transactionId">Transaction ID:</label>
+    <input type="text" id="transactionId" placeholder="Enter Transaction ID">
+    
+    <button onclick="requestData()">Request Data</button>
+
+    <script>
+        async function requestData() {
+            const transactionId = document.getElementById('transactionId').value;
+            // Logic to send data to CCIP chain
+            const response = { data: "Returned data from CCIP chain" };
+
+            // Redirect to the result page with the response data
+            window.location.href = `result-page.html?data=${encodeURIComponent(JSON.stringify(response))}`;
+        }
+    </script>
+</body>
+</html>
