@@ -500,7 +500,7 @@ color="yellow"
 sx={{ mb: 1 }}
 variant="body0"
 >
-<p>XXXXXXXXXxSelect buttons below to view the code sections.</p>
+<p>Select buttons below to view the code sections.</p>
 </Typography>
 <br/>
 
