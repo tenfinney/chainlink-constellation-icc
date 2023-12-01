@@ -73,6 +73,10 @@ https://freeweb3.infura-ipfs.io/ipfs/QmRoYhoJ4WMP8GuC2KZXm8EVvYfxUYWBzgUHBBfAYou
 https://freeweb3.infura-ipfs.io/ipfs/QmWs5pNLXoJ4hkLjkTL2v7QCB1BEQQhDuX86gjGRa56fuW
 
 
+### Test Deployment:
+https://sepolia.etherscan.io/tx/0xb4ae9765eb20e8711ba921ff831b8e420441f59d460d2ebc2884096557103259 
+https://sepolia.etherscan.io/address/0x4088f46F3420A441eDb3a8800A1894eC4CA28A3a
+
 ---
 
 ## SOME IMPORTANT FILES:
